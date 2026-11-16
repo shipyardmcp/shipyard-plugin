@@ -5,6 +5,9 @@ description: Use after a product has been launched with Shipyard, when the user 
 
 # After a launch
 
+
+These steps use Shipyard's `shipyard_` tools. If you do not have them, Shipyard is not connected yet: use the `launch-a-product` skill's first section to get it installed and connected, then come back.
+
 ## Check health
 
 Call `shipyard_check`. It tests the live site over HTTPS, the database, a test email and a test payment webhook. Report each result plainly. If one fails, give the user the "what to do" line and check again after they act.

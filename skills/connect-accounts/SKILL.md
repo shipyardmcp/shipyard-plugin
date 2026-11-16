@@ -7,6 +7,9 @@ description: Use when the user needs to connect or fix a provider account for Sh
 
 Shipyard works with the user's own provider accounts. Each is connected once with a token the user creates and pastes into Shipyard's setup page. You never see the token.
 
+
+These steps use Shipyard's `shipyard_` tools. If you do not have them, Shipyard is not connected yet: use the `launch-a-product` skill's first section to get it installed and connected, then come back.
+
 ## Steps
 
 1. Call `shipyard_credentials`. It lists each account the chosen stack needs, whether it is stored, where to create the token, the exact clicks, and the narrowest permissions that work with the reason for each.

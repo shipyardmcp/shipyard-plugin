@@ -5,12 +5,14 @@ description: Use when the user wants to launch, deploy or go live with a new pro
 
 # Launch a product with Shipyard
 
-Shipyard is a program on the user's own computer. It sets up the domain, DNS, repository, hosting, database, sending email and payments for a new product, using the user's own provider accounts. You drive it through the `shipyard` MCP tools.
+Shipyard is a program on the user's own computer. It sets up the domain, DNS, repository, hosting, database, sending email and payments for a new product, using the user's own provider accounts. You drive it through Shipyard's own MCP tools, which appear once the user has connected Shipyard (see below).
 
 ## Before anything else
 
-1. Call `shipyard_overview`. It says whether Shipyard is installed and licensed, which accounts are connected, and what to do next.
-2. If the tools are missing, Shipyard is not installed. Tell the user to get it at https://shipyardmcp.com and follow the two install lines on their account page. Do not try to install it yourself.
+1. Check whether you have tools whose names start with `shipyard_`. If you do, call `shipyard_overview`: it says whether Shipyard is licensed, which accounts are connected, and what to do next.
+2. If you have no `shipyard_` tools, Shipyard is not connected to this Claude yet. Tell the user the two things to do, and wait for them:
+   - **Install Shipyard**, if they have not: create an account at https://shipyardmcp.com and paste the two install lines from their account page into a terminal. Do not try to install it yourself.
+   - **Connect it once.** In Claude Code that is one line in a terminal: `claude mcp add shipyard -- shipyard mcp`. Then start a new session.
 3. If accounts are not connected yet, use the `connect-accounts` skill. You cannot add tokens: the user pastes them into Shipyard's own page.
 
 ## The launch, in order

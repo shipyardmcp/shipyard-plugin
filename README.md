@@ -7,18 +7,23 @@ Launch a product without leaving Claude. This plugin connects Claude to Shipyard
 - **Shipyard installed on your computer.** This plugin does not contain the program. Get it at [shipyardmcp.com](https://shipyardmcp.com): after you create an account, your account page shows two lines to paste into a terminal. Shipyard is paid software and needs a licence.
 - **Your own provider accounts**, such as GitHub, a host, Cloudflare, Resend and Stripe. You connect each once.
 
+## Connect Shipyard to Claude, once
+
+After installing Shipyard, run this one line in a terminal so Claude can reach it:
+
+    claude mcp add shipyard -- shipyard mcp
+
 ## What the plugin adds
 
-- **An MCP server entry** that runs `server.js`, a short readable file in this plugin. All it does is start `shipyard mcp`, the program you installed, and pass messages through. Nothing is downloaded by the plugin.
-- **Three skills** that teach Claude the safe way to use it: `launch-a-product`, `connect-accounts` and `after-launch`.
+Three skills that teach Claude the safe way to run a launch with Shipyard: `launch-a-product`, `connect-accounts` and `after-launch`. They cover asking before anything is bought, never taking a provider token in the chat, resuming a launch that stopped, and what to do once the product is live.
 
 Try: "Launch a product called tidetable at tidetable.app", "Which accounts does Shipyard still need?", or "Is tidetable healthy?"
 
 ## What it runs, sends and fetches
 
-- It runs one file, `server.js`, with Node. That file starts one command: `shipyard mcp`, from the Shipyard program on your computer. If Shipyard is not installed it says so and stops.
-- Shipyard calls the APIs of the providers you chose, with tokens you created, to create the resources shown in the plan. Costs go to your providers. The only purchase in a launch is the domain: Shipyard shows the price and waits for you to confirm it yourself, and a spend cap refuses anything above your limit.
-- The plugin itself sends nothing anywhere and has no hooks.
+- The plugin is text only: three skill files. It contains no program, no scripts and no hooks, and it starts nothing by itself.
+- The skills tell Claude to use the Shipyard program you installed and connected yourself. Shipyard calls the APIs of the providers you chose, with tokens you created, to create the resources shown in the plan. Costs go to your providers. The only purchase in a launch is the domain: Shipyard shows the price and waits for you to confirm it yourself, and a spend cap refuses anything above your limit.
+- The plugin itself sends nothing anywhere.
 
 ## Privacy Policy
 
