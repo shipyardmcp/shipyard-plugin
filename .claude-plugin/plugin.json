@@ -1,0 +1,10 @@
+{
+  "name": "shipyard-launch",
+  "displayName": "Shipyard",
+  "description": "Launch a product from Claude: plan and run the setup of domain, hosting, database, email and payments with the Shipyard program on your own computer, then build on what is already live.",
+  "version": "0.1.0",
+  "author": { "name": "Sound Investments B.V.", "url": "https://shipyardmcp.com" },
+  "homepage": "https://shipyardmcp.com",
+  "license": "MIT",
+  "keywords": ["launch", "deploy", "saas", "domain", "stripe", "hosting", "setup"]
+}
