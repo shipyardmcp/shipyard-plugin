@@ -9,14 +9,14 @@ Launch a product without leaving Claude. This plugin connects Claude to Shipyard
 
 ## What the plugin adds
 
-- **An MCP server entry** that starts `shipyard mcp`, the program you installed. Nothing is downloaded by the plugin.
+- **An MCP server entry** that runs `server.js`, a short readable file in this plugin. All it does is start `shipyard mcp`, the program you installed, and pass messages through. Nothing is downloaded by the plugin.
 - **Three skills** that teach Claude the safe way to use it: `launch-a-product`, `connect-accounts` and `after-launch`.
 
 Try: "Launch a product called tidetable at tidetable.app", "Which accounts does Shipyard still need?", or "Is tidetable healthy?"
 
 ## What it runs, sends and fetches
 
-- It runs one command: `shipyard mcp`, from the Shipyard program on your computer.
+- It runs one file, `server.js`, with Node. That file starts one command: `shipyard mcp`, from the Shipyard program on your computer. If Shipyard is not installed it says so and stops.
 - Shipyard calls the APIs of the providers you chose, with tokens you created, to create the resources shown in the plan. Costs go to your providers. The only purchase in a launch is the domain: Shipyard shows the price and waits for you to confirm it yourself, and a spend cap refuses anything above your limit.
 - The plugin itself sends nothing anywhere and has no hooks.
 
